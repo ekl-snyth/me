@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Mehak ✨</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at top, #1a1a2e, #0f0f1a);
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      color: white;
+    }
+
+    .card {
+      text-align: center;
+      padding: 40px 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(20px);
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      animation: fadeIn 2s ease;
+      max-width: 400px;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.2rem;
+      margin-bottom: 10px;
+      color: #ffb6c1;
+      animation: slideDown 1.5s ease;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      font-size: 1.4rem;
+      margin: 15px 0;
+      font-weight: 600;
+      color: #ffd6e0;
+      animation: glow 2s infinite alternate;
+    }
+
+    .heart {
+      font-size: 2rem;
+      margin-top: 10px;
+      animation: heartbeat 1.2s infinite;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.25); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #ffb6c1; }
+      to { text-shadow: 0 0 20px #ff69b4; }
+    }
+
+    .stars span {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 3s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%,100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    .floating-hearts span {
+      position: absolute;
+      color: rgba(255,182,193,0.5);
+      font-size: 18px;
+      animation: float 10s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(0.6);
+        opacity: 0;
+      }
+      50% { opacity: 1; }
+      100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    .footer {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h1>Mehak ✨</h1>
+  <div class="subtitle">This Thursday...</div>
+
+  <div class="highlight">
+    Just be ready for a beautiful day 💫
+  </div>
+
+  <div class="heart">❤️</div>
+
+  <div class="footer">Something special awaits you...</div>
+</div>
+
+<div class="floating-hearts">
+  <span style="left:10%; animation-delay:0s;">❤</span>
+  <span style="left:25%; animation-delay:2s;">❤</span>
+  <span style="left:40%; animation-delay:4s;">❤</span>
+  <span style="left:60%; animation-delay:1s;">❤</span>
+  <span style="left:75%; animation-delay:3s;">❤</span>
+  <span style="left:90%; animation-delay:5s;">❤</span>
+</div>
+
+<div class="stars">
+  <span style="top:10%; left:20%; animation-delay:1s;"></span>
+  <span style="top:30%; left:80%; animation-delay:2s;"></span>
+  <span style="top:60%; left:40%; animation-delay:0s;"></span>
+  <span style="top:70%; left:70%; animation-delay:3s;"></span>
+  <span style="top:20%; left:60%; animation-delay:1.5s;"></span>
+</div>
+
+<script>
+  // click sparkle effect
+  document.body.addEventListener('click', function(e) {
+    const sparkle = document.createElement('div');
+    sparkle.innerHTML = '✨';
+    sparkle.style.position = 'absolute';
+    sparkle.style.left = e.clientX + 'px';
+    sparkle.style.top = e.clientY + 'px';
+    sparkle.style.fontSize = '18px';
+    sparkle.style.pointerEvents = 'none';
+    sparkle.style.animation = 'fadeOut 1s forwards';
+    document.body.appendChild(sparkle);
+
+    setTimeout(() => sparkle.remove(), 1000);
+  });
+
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes fadeOut {
+      from { opacity: 1; transform: scale(1); }
+      to { opacity: 0; transform: scale(2); }
+    }
+  `;
+  document.head.appendChild(style);
+</script>
+
+</body>
+</html>
